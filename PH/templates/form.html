@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Submit a form</title>
+   <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="pagetitle">
+        <h1>Submit a form</h1>
+      </div>
+      <div id="main">
+        <form method="post" action="{{ url_for('submitted_form') }}">
+          <label >PH:</label>
+          <input type="number" step="any" name="in1"><br />
+          <label >PaCO2:</label>
+          <input type="number" step="any" name="in2"><br />
+          <label >HCO3:</label>
+          <input type="number" step="any" name="in3"><br />
+          <label >Na+</label>
+          <input type="number" step="any" name="in4"><br />
+          <label >Cl-</label>
+          <input type="number" step="any" name="in5"><br />
+          <label >Alb</label>
+          <input type="number" step="any" name="in6"><br />
+          <label >Una</label>
+          <input type="number" step="any" name="in7"><br />
+          <label >Uk</label>
+          <input type="number" step="any" name="in8"><br />
+          <label >Ucl</label>
+          <input type="number" step="any" name="in9"><br />
+          <label >Uph</label>
+          <input type="number" step="any" name="in10"><br />
+          <label >Bk</label>
+          <input type="number" step="any" name="in11"><br />
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
