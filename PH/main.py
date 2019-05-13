@@ -74,7 +74,7 @@ def submitted_form():
             if Alb < 3.8 - epsilon:
                 AG += (4 - Alb) * 2.5
 
-            if AG < 12 + epsilon or AG > 10 - epsilon:
+            if AG < 12 + epsilon and AG > 10 - epsilon:
                 result = "Normal Anion Metabolic Acidosis "
                 if Una > -0.5: # Una and else exist
                     U_AG = Una + Uk - Ucl
