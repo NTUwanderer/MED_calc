@@ -144,7 +144,21 @@ def submitted_form():
                 result += "(Chronic Respiratory Alkaloids)"
             else:
                 result += "(Respiratory Alkaloids + Metabolic Alkaloids)"
-
+    
+    else:
+        tolerance = 0.5
+        if (abs(PaCO2 - 40) < tolerance + epsilon and abs(HCO3 - 24) < tolerance + epsilon):
+            AG = Na - Cl - HCO3
+            deltaAG = AG - 11
+            if deltaAG > 2.0 * abs(HCO3 - 24) + epsilon:
+                result = "High Anion Metabolic Acidosis and Metabolic Alkaloids"
+        
+        elif (PaCO2 > 40 + epsilon and HCO3 > 24 + epsilon):
+            result = "Respiratory Acidosis and Metabolic Alkaloids"
+        elif (PaCO2 < 40 - epsilon and HCO3 < 24 - epsilon):
+            result = "Respiratory Acidosis and Metabolic Alkaloids"
+        else:
+            result = "To be discussed"
 
     # [END submitted]
     # [START render_template]
