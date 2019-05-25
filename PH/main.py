@@ -63,11 +63,12 @@ def submitted_form():
         if (HCO3 < 24):
             result += "Acidosis, "
             value = 40 - 1.25 * (24 - HCO3) - PaCO2
-            if abs(value) <= (2 + epsilon):
+            tolerance = 0.5
+            if abs(value) <= (tolerance + epsilon):
                 pass
-            elif value > 2:
+            elif value > tolerance:
                 result += "Respiratory Acidosis "
-            else: # value < -2
+            else: # value < -tolerance
                 result += "Respiratory Alkaloidss "
 
             AG = Na - Cl - HCO3
